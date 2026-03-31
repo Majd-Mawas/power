@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بورسايمنت | مراجعة أكاديمية لبحثك قبل التسليم</title>
+    <meta
+      name="description"
+      content="راجع بحثك أو مشروعك الأكاديمي قبل التسليم، وتأكد من سلامة التوثيق والتنسيق والملاحظات الأكاديمية عبر دعم أكاديمي منظم وواضح."
+    />
+    <style>
+      :root {
+        --bg-1: #02092b;
+        --bg-2: #0a1f74;
+        --bg-3: #1245d4;
+        --surface: rgba(8, 20, 79, 0.72);
+        --surface-soft: rgba(14, 34, 118, 0.55);
+        --border: rgba(133, 179, 255, 0.35);
+        --text: #eaf3ff;
+        --muted: rgba(232, 242, 255, 0.78);
+        --accent: #2bd9b5;
+        --accent-2: #2b77ff;
+        --danger: #ff7b9f;
+        --success: #91ffe7;
+        --shadow: 0 24px 60px rgba(3, 11, 42, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--text);
+        font-family: "Cairo", "Tajawal", "Segoe UI", Arial, sans-serif;
+        background:
+          radial-gradient(
+            circle at 12% 18%,
+            rgba(43, 217, 181, 0.22),
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 86% 8%,
+            rgba(43, 119, 255, 0.28),
+            transparent 44%
+          ),
+          radial-gradient(
+            circle at 50% 120%,
+            rgba(43, 119, 255, 0.25),
+            transparent 60%
+          ),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2) 50%, var(--bg-3));
+        min-height: 100vh;
+        line-height: 1.7;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        width: min(1160px, calc(100% - 2rem));
+        margin-inline: auto;
+      }
+      .grid-bg {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.18;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px);
+        background-size: 62px 62px;
+        mask-image: radial-gradient(
+          circle at center,
+          black 45%,
+          transparent 100%
+        );
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.86rem;
+        color: rgba(224, 236, 255, 0.9);
+        background: rgba(4, 13, 53, 0.88);
+      }
+      .brandline {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 800;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 1.1rem;
+      }
+
+      .nav {
+        padding: 0.9rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background: rgba(11, 27, 102, 0.75);
+        border-top: 1px solid rgba(92, 141, 255, 0.22);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        color: rgba(236, 245, 255, 0.88);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        margin-top: 1.4rem;
+        border: 1px solid rgba(151, 191, 255, 0.28);
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(2, 10, 40, 0.42);
+        background:
+          radial-gradient(
+            circle at 85% 15%,
+            rgba(67, 138, 255, 0.26),
+            transparent 22%
+          ),
+          radial-gradient(
+            circle at 15% 85%,
+            rgba(43, 217, 181, 0.18),
+            transparent 25%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(8, 22, 88, 0.98),
+            rgba(19, 61, 190, 0.94)
+          );
+        display: grid;
+        grid-template-columns: 1.06fr 0.94fr;
+        min-height: 640px;
+        position: relative;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.03),
+            transparent 35%,
+            rgba(255, 255, 255, 0.02) 65%,
+            transparent
+          );
+        mix-blend-mode: screen;
+        opacity: 0.7;
+      }
+      .hero-media {
+        position: relative;
+        min-height: 360px;
+        display: flex;
+        align-items: flex-end;
+        padding: 1.25rem;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(5, 16, 60, 0.08), rgba(5, 16, 60, 0.28)),
+          linear-gradient(90deg, rgba(8, 23, 84, 0.06), rgba(10, 30, 108, 0.18));
+      }
+      .hero-media::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 28% 24%,
+            rgba(255, 255, 255, 0.1),
+            transparent 24%
+          ),
+          linear-gradient(180deg, transparent 60%, rgba(3, 10, 40, 0.22) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .hero-media-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+        background: #dfe4f0;
+        padding: 0;
+      }
+      .hero-media-card {
+        position: relative;
+        z-index: 2;
+        max-width: 330px;
+        background: rgba(7, 18, 71, 0.72);
+        border: 1px solid rgba(155, 197, 255, 0.24);
+        backdrop-filter: blur(12px);
+        border-radius: 22px;
+        padding: 1rem 1rem 0.95rem;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+      }
+      .hero-media-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-bottom: 0.55rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: #dff4ff;
+        background: rgba(43, 217, 181, 0.14);
+        border: 1px solid rgba(124, 244, 222, 0.25);
+      }
+      .hero-media-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.02rem;
+        font-weight: 900;
+      }
+      .hero-media-text {
+        margin: 0;
+        color: rgba(231, 242, 255, 0.84);
+        font-size: 0.92rem;
+        line-height: 1.8;
+      }
+      .hero-content {
+        position: relative;
+        padding: 2.4rem 2.25rem 2.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.05rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 12%),
+          linear-gradient(
+            135deg,
+            rgba(20, 70, 216, 0.88),
+            rgba(8, 35, 120, 0.95)
+          );
+      }
+      .hero-content::before {
+        content: "";
+        position: absolute;
+        inset-inline-start: -120px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 260px;
+        height: 260px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle,
+          rgba(76, 161, 255, 0.38),
+          rgba(76, 161, 255, 0.06) 55%,
+          transparent 72%
+        );
+        filter: blur(8px);
+        pointer-events: none;
+      }
+      .hero-content > * {
+        position: relative;
+        z-index: 1;
+      }
+      .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 0.45rem;
+        border-radius: 999px;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.82rem;
+        font-weight: 800;
+        border: 1px solid rgba(168, 214, 255, 0.24);
+        background: rgba(255, 255, 255, 0.08);
+        color: #eef7ff;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 3.7vw, 3.45rem);
+        line-height: 1.42;
+        font-weight: 950;
+        letter-spacing: -0.02em;
+      }
+      .lead {
+        margin: 0;
+        color: rgba(236, 245, 255, 0.92);
+        font-size: 1.08rem;
+        max-width: 58ch;
+      }
+      .hero-highlight {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-top: 0.1rem;
+      }
+      .hero-pill {
+        padding: 0.8rem 0.9rem;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(165, 205, 255, 0.2);
+        text-align: center;
+      }
+      .hero-pill strong {
+        display: block;
+        font-size: 1rem;
+        font-weight: 900;
+        margin-bottom: 0.15rem;
+      }
+      .hero-pill span {
+        color: rgba(231, 242, 255, 0.82);
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+      .checks {
+        list-style: none;
+        margin: 0.15rem 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.72rem 0.9rem;
+      }
+      .checks li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+        font-size: 0.98rem;
+        color: #f2f7ff;
+      }
+      .check {
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        display: inline-grid;
+        place-items: center;
+        flex: 0 0 auto;
+        background: linear-gradient(
+          180deg,
+          rgba(41, 225, 188, 0.34),
+          rgba(52, 153, 255, 0.34)
+        );
+        border: 1px solid rgba(125, 241, 224, 0.45);
+        color: #fff;
+        font-size: 0.84rem;
+        margin-top: 0.14rem;
+        box-shadow: 0 8px 20px rgba(36, 166, 214, 0.18);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        min-height: 54px;
+        padding: 0 1.45rem;
+        border-radius: 999px;
+        border: 0;
+        font-weight: 900;
+        font-size: 1rem;
+        cursor: pointer;
+        transition:
+          0.2s transform,
+          0.2s filter,
+          0.2s box-shadow;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.04);
+      }
+      .btn-primary {
+        color: #fff;
+        background: linear-gradient(90deg, #1fd29f, #33a5ff);
+        box-shadow: 0 16px 36px rgba(21, 160, 237, 0.32);
+      }
+      .btn-secondary {
+        color: #eef6ff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(173, 214, 255, 0.3);
+      }
+      .hero-note {
+        margin: 0;
+        color: rgba(224, 238, 255, 0.78);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      .section {
+        margin-top: 1.5rem;
+        padding: 1.4rem;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: var(--surface-soft);
+        backdrop-filter: blur(6px);
+      }
+      .section.deep {
+        background: var(--surface);
+      }
+      .title {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+        font-weight: 900;
+      }
+      .subtitle {
+        max-width: 820px;
+        margin: 0.55rem auto 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 1.03rem;
+      }
+
+      .stats {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.9rem;
+      }
+      .card {
+        border: 1px solid rgba(130, 177, 255, 0.36);
+        background: rgba(245, 250, 255, 0.09);
+        border-radius: 18px;
+        padding: 1rem;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat strong {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 900;
+      }
+      .stat span {
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .proof {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+      }
+      .proof .card {
+        display: grid;
+        place-items: center;
+        min-height: 160px;
+        text-align: center;
+        color: var(--muted);
+        font-weight: 800;
+      }
+      .proof img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .problems,
+      .steps,
+      .compare,
+      .cta-grid {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.9rem;
+      }
+      .problems {
+        grid-template-columns: 1fr 1fr;
+      }
+      .steps {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .compare {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .problem h3,
+      .step h3,
+      .compare h3 {
+        margin: 0.2rem 0 0;
+        font-size: 1.2rem;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .icon-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid rgba(127, 184, 255, 0.45);
+        background: rgba(35, 80, 220, 0.38);
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        font-weight: 900;
+      }
+      .problem-head {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .step {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        justify-content: space-between;
+        min-height: 180px;
+      }
+      .step-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .step-index {
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: rgba(188, 215, 255, 0.9);
+      }
+      .step-desc {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .note {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.18rem;
+        font-weight: 800;
+        color: rgba(232, 245, 255, 0.92);
+      }
+
+      .compare-head {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        font-size: 1rem;
+        font-weight: 900;
+        color: #fff;
+        margin-bottom: 0.8rem;
+      }
+      .good-head {
+        background: linear-gradient(90deg, #2bd9b5, #2a97ff);
+      }
+      .bad-head {
+        background: linear-gradient(90deg, #ff5a8d, #e23f5f);
+      }
+      .doc {
+        min-height: 220px;
+        overflow: hidden;
+        border-radius: 16px;
+        border: 1px solid rgba(146, 190, 255, 0.35);
+        background: rgba(255, 255, 255, 0.09);
+        margin-bottom: 0.8rem;
+      }
+      .doc img {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: cover;
+      }
+      .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.55rem;
+        font-weight: 800;
+      }
+      .list li {
+        display: flex;
+        gap: 0.45rem;
+        align-items: flex-start;
+      }
+      .good {
+        color: var(--success);
+      }
+      .bad {
+        color: #ff9fb8;
+      }
+
+      .final {
+        text-align: center;
+        background:
+          radial-gradient(
+            circle at center,
+            rgba(63, 124, 255, 0.32),
+            transparent 60%
+          ),
+          rgba(8, 18, 72, 0.8);
+      }
+
+      .sticky-cta {
+        position: sticky;
+        bottom: 0;
+        z-index: 20;
+        margin-top: 1rem;
+      }
+      .sticky-cta-inner {
+        width: min(1160px, calc(100% - 1rem));
+        margin-inline: auto;
+        margin-bottom: 0.6rem;
+        background: rgba(8, 18, 72, 0.92);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(132, 177, 255, 0.38);
+        border-radius: 18px;
+        padding: 0.8rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        box-shadow: var(--shadow);
+      }
+      .sticky-cta-text {
+        font-weight: 800;
+      }
+      .sticky-cta-text small {
+        display: block;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      footer {
+        padding: 1.5rem 0 2rem;
+        color: rgba(232, 242, 255, 0.75);
+        font-size: 0.92rem;
+        text-align: center;
+      }
+
+      @media (max-width: 992px) {
+        .nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+        .hero-content {
+          padding: 1.6rem 1.25rem 1.5rem;
+        }
+        .hero-content::before {
+          display: none;
+        }
+        .hero-highlight,
+        .checks,
+        .stats,
+        .proof,
+        .problems,
+        .steps,
+        .compare,
+        .cta-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-media {
+          min-height: 260px;
+          padding: 1rem;
+        }
+        .hero-media-card {
+          max-width: none;
+        }
+        .sticky-cta-inner {
+          flex-direction: column;
+          align-items: stretch;
+          text-align: center;
+        }
+      }
+      [dir="rtl"] .ltr {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+      }
+      .step-index {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+      }
+      .stat strong {
+        direction: ltr;
+        unicode-bidi: bidi-override;
+      }
+      @media (max-width: 992px) {
+        .hero-media {
+          order: 2;
+        }
+        .hero-content {
+          order: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <header class="container">
+      <div class="topbar">
+        <div class="ltr">+971 50 169 6228 • powersiment@gmail.com</div>
+        <div>خدمات أكاديمية منظمة وواضحة</div>
+      </div>
+      <nav class="nav">
+        <div class="brandline">
+          <div class="logo">PS</div>
+          <div>بورسايمنت | خدمات جامعية متكاملة</div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#hero">الرئيسية</a></li>
+          <li><a href="#proof">آراء العملاء</a></li>
+          <li><a href="#problems">الأخطاء الشائعة</a></li>
+          <li><a href="#steps">كيف نساعدك</a></li>
+          <li><a href="#compare">قبل وبعد</a></li>
+        </ul>
+      </nav>
+
+      <section id="hero" class="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            class="hero-media-image"
+            src="https://powersiment.online/storage/landing-pages/tiktok/hero/01KM66VW811X5842MX94N2340X.jpg"
+            alt=""
+          />
+          <div class="hero-media-card">
+            <div class="hero-media-badge">مراجعة قبل التسليم</div>
+            <h3 class="hero-media-title">وضوح أكثر قبل اتخاذ الخطوة الأخيرة</h3>
+            <p class="hero-media-text">
+              اعرف ما الذي يحتاجه بحثك أو مشروعك من توثيق وتنسيق وملاحظات، قبل
+              أن يضيق الوقت.
+            </p>
+          </div>
+        </div>
+        <div class="hero-content">
+          <span class="eyebrow">إرشاد أكاديمي متخصص</span>
+
+          <h2>
+            هل تعمل على بحث أكاديمي
+            <br />
+            (بكالوريوس، ماجستير أو دكتوراه)
+            <br />
+            وقد يؤدي خطأ بسيط إلى رفضه أو خسارة درجات مهمة؟
+          </h2>
+
+          <p class="lead">
+            راجع بحثك أو مشروعك قبل التسليم، وتأكد من سلامة التوثيق والتنسيق
+            والملاحظات الأكاديمية وفق متطلباتك الجامعية.
+          </p>
+
+          <div class="hero-highlight">
+            <div class="hero-pill">
+              <strong>مراجعة أكاديمية</strong><span>بصياغة واضحة</span>
+            </div>
+            <div class="hero-pill">
+              <strong>توثيق وتنسيق</strong><span>حسب المتطلبات</span>
+            </div>
+            <div class="hero-pill">
+              <strong>تواصل مباشر</strong><span>عبر واتساب</span>
+            </div>
+          </div>
+
+          <ul class="checks">
+            <li>
+              <span class="check">✓</span
+              ><span>مراجعة أكاديمية شاملة قبل التسليم</span>
+            </li>
+            <li>
+              <span class="check">✓</span
+              ><span>فحص التوثيق والمراجع والتنسيق الأكاديمي</span>
+            </li>
+            <li>
+              <span class="check">✓</span
+              ><span>مراجعة الملاحظات الواردة على البحث أو المشروع</span>
+            </li>
+            <li>
+              <span class="check">✓</span
+              ><span>توضيح النقاط التي تحتاج تعديل بصورة عملية وواضحة</span>
+            </li>
+            <li>
+              <span class="check">✓</span
+              ><span>دعم منظم يناسب البكالوريوس والماجستير والدكتوراه</span>
+            </li>
+          </ul>
+
+          <div class="actions">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/971501696228?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9%20%D8%A8%D8%AD%D8%AB%D9%8A%20%D8%A3%D9%88%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A"
+              target="_blank"
+              rel="noopener"
+            >
+              اطلب مراجعة أولية الآن
+            </a>
+            <a class="btn btn-secondary" href="#steps">اعرف كيف تتم المراجعة</a>
+          </div>
+
+          <p class="hero-note">
+            رسالة واضحة • خطوة عملية • تواصل مباشر عبر واتساب
+          </p>
+        </div>
+      </section>
+
+      <section id="proof" class="section">
+        <h2 class="title">صفحة مناسبة لإعلانات جوجل… ورسالة واضحة للمستخدم</h2>
+        <p class="subtitle">
+          هذه النسخة تركز على عرض الخدمة بشكل مهني ومتزن، بدون وعود مبالغ فيها،
+          وبصياغة تساعد على تحسين جودة الصفحة وتجربة التحويل.
+        </p>
+
+        <div class="stats">
+          <div class="card stat">
+            <strong>13+</strong>
+            <span>سنة في الدعم الأكاديمي</span>
+          </div>
+          <div class="card stat">
+            <strong>19,000+</strong>
+            <span>أعمال تمت خدمتها</span>
+          </div>
+          <div class="card stat">
+            <strong>4.9/5</strong>
+            <span>تقييم العملاء</span>
+          </div>
+        </div>
+
+        <div class="proof">
+          <div class="card">
+            <img
+              src="https://powersiment.online/storage/landing-pages/tiktok/proof/01KKD2ZMXZ27SXDVA83RV24JBY.png"
+              alt="نماذج آراء العملاء"
+              loading="lazy"
+            />
+          </div>
+          <div class="card">
+            <img
+              src="https://powersiment.online/storage/landing-pages/tiktok/proof/01KKD2ZMY12A9RV9KFQVE4F73J.png"
+              alt="نماذج آراء العملاء"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="actions" style="justify-content: center; margin-top: 1rem">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/971501696228?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9%20%D8%A7%D9%84%D8%A8%D8%AD%D8%AB"
+            target="_blank"
+            rel="noopener"
+          >
+            تواصل لمعرفة التفاصيل
+          </a>
+        </div>
+      </section>
+
+      <section id="problems" class="section deep">
+        <h2 class="title">أخطاء شائعة قد تؤثر على تقييم البحث</h2>
+        <p class="subtitle">
+          المشكلة غالبًا ليست في الفكرة نفسها، بل في تفاصيل أكاديمية تؤثر على
+          جودة التسليم
+        </p>
+
+        <div class="problems">
+          <article class="card problem">
+            <div class="problem-head">
+              <div class="icon-badge">01</div>
+              <h3>توثيق غير صحيح للمصادر والمراجع</h3>
+            </div>
+            <p class="muted">
+              أخطاء في طريقة التوثيق أو ترتيب المراجع أو النمط المطلوب من
+              الجامعة.
+            </p>
+          </article>
+
+          <article class="card problem">
+            <div class="problem-head">
+              <div class="icon-badge">02</div>
+              <h3>ارتفاع نسبة الاقتباس</h3>
+            </div>
+            <p class="muted">
+              وجود صياغات تحتاج إعادة كتابة أكاديمية أو مراجعة أدق قبل التسليم.
+            </p>
+          </article>
+
+          <article class="card problem">
+            <div class="problem-head">
+              <div class="icon-badge">03</div>
+              <h3>تنسيق لا يطابق متطلبات الجهة التعليمية</h3>
+            </div>
+            <p class="muted">
+              العناوين، الهوامش، الجداول، الفهرسة أو تنسيق الفصول قد يحتاج
+              مراجعة منظمة.
+            </p>
+          </article>
+
+          <article class="card problem">
+            <div class="problem-head">
+              <div class="icon-badge">04</div>
+              <h3>ملاحظات تحتاج معالجة قبل إعادة التسليم</h3>
+            </div>
+            <p class="muted">
+              عند وجود تعليقات من المشرف أو المدقق، يكون المطلوب تنفيذها بوضوح
+              وبدون إغفال.
+            </p>
+          </article>
+        </div>
+
+        <p class="note">
+          المراجعة المبكرة تساعدك على معرفة نقاط التحسين قبل ضيق الوقت.
+        </p>
+      </section>
+
+      <section id="steps" class="section">
+        <h2 class="title">كيف تتم المراجعة؟</h2>
+        <p class="subtitle">
+          رحلة بسيطة وواضحة تساعدك على معرفة ما يحتاجه البحث أو المشروع قبل
+          التسليم
+        </p>
+
+        <div class="steps">
+          <article class="card step">
+            <div class="step-meta">
+              <span class="step-index">01.</span>
+              <div class="icon-badge">✓</div>
+            </div>
+            <h3>إرسال الملف أو الملاحظات</h3>
+            <p class="step-desc">
+              ترسل البحث أو المشروع أو ملاحظات المشرف عبر واتساب لبدء المعاينة
+              الأولية.
+            </p>
+          </article>
+
+          <article class="card step">
+            <div class="step-meta">
+              <span class="step-index">02.</span>
+              <div class="icon-badge">✓</div>
+            </div>
+            <h3>تحديد ما يحتاجه العمل</h3>
+            <p class="step-desc">
+              يتم توضيح ما إذا كان المطلوب مراجعة توثيق أو تنسيق أو ملاحظات أو
+              تحسينات أكاديمية.
+            </p>
+          </article>
+
+          <article class="card step">
+            <div class="step-meta">
+              <span class="step-index">03.</span>
+              <div class="icon-badge">✓</div>
+            </div>
+            <h3>تنفيذ المراجعة بشكل منظم</h3>
+            <p class="step-desc">
+              مراجعة العمل وفق النقاط المطلوبة بصورة واضحة، بدون مبالغة في
+              الوعود أو النتائج.
+            </p>
+          </article>
+
+          <article class="card step">
+            <div class="step-meta">
+              <span class="step-index">04.</span>
+              <div class="icon-badge">✓</div>
+            </div>
+            <h3>استلام نسخة أكثر جاهزية</h3>
+            <p class="step-desc">
+              تستلم نسخة محسنة تساعدك على التسليم بثقة أكبر ووضوح أعلى.
+            </p>
+          </article>
+        </div>
+
+        <div class="actions" style="justify-content: center; margin-top: 1rem">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/971501696228?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A8%D8%AF%D8%A1%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9%20%D8%A8%D8%AD%D8%AB%D9%8A"
+            target="_blank"
+            rel="noopener"
+          >
+            ابدأ المراجعة عبر واتساب
+          </a>
+        </div>
+      </section>
+
+      <section id="compare" class="section">
+        <h2 class="title">من نسخة تحتاج مراجعة… إلى نسخة أكثر تنظيمًا</h2>
+        <p class="subtitle">
+          عرض بصري يوضح الفارق في الشكل الأكاديمي والتنظيم قبل وبعد المراجعة
+        </p>
+
+        <div class="compare">
+          <article class="card">
+            <span class="compare-head bad-head">قبل المراجعة</span>
+            <div class="doc">
+              <img
+                src="https://powersiment.online/storage/landing-pages/tiktok/compare/01KM66VW842WTM15N4T7NRQ21S.jpg"
+                alt="قبل المراجعة"
+                loading="lazy"
+              />
+            </div>
+            <ul class="list">
+              <li>
+                <span class="bad">✕</span
+                ><span>تعليقات متعددة تحتاج متابعة</span>
+              </li>
+              <li>
+                <span class="bad">✕</span><span>توثيق أو تنسيق غير مكتمل</span>
+              </li>
+              <li>
+                <span class="bad">✕</span
+                ><span>وجود نقاط غير واضحة قبل التسليم</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <span class="compare-head good-head">بعد المراجعة</span>
+            <div class="doc">
+              <img
+                src="https://powersiment.online/storage/landing-pages/tiktok/compare/01KKHN84C6VGRJJ2M61XW7FHSQ.png"
+                alt="بعد المراجعة"
+                loading="lazy"
+              />
+            </div>
+            <ul class="list">
+              <li>
+                <span class="good">✓</span><span>تنظيم أكاديمي أفضل</span>
+              </li>
+              <li>
+                <span class="good">✓</span
+                ><span>وضوح أعلى في التوثيق والمراجع</span>
+              </li>
+              <li>
+                <span class="good">✓</span
+                ><span>نسخة أكثر جاهزية للمراجعة النهائية</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section final">
+        <h2 class="title">راجع بحثك أو مشروعك اليوم</h2>
+        <p class="subtitle">
+          وتأكد أن كل تفصيلة في مكانها الصحيح لتحقيق أفضل درجة
+        </p>
+
+        <div class="cta-grid">
+          <div class="card" style="text-align: right">
+            <h3 style="margin-top: 0">لماذا هذه النسخة أفضل لإعلانات جوجل؟</h3>
+            <ul class="list" style="font-weight: 700">
+              <li>
+                <span class="good">✓</span
+                ><span>لغة واضحة ومهنية بدون وعود مطلقة</span>
+              </li>
+              <li>
+                <span class="good">✓</span
+                ><span>التركيز على المراجعة والدعم بدل المبالغة</span>
+              </li>
+              <li>
+                <span class="good">✓</span><span>CTA مباشر وسهل الفهم</span>
+              </li>
+              <li>
+                <span class="good">✓</span
+                ><span>رسالة متوافقة مع نية الباحث أو الطالب</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card" style="text-align: right">
+            <h3 style="margin-top: 0">الخطوة التالية</h3>
+            <p class="muted">
+              أرسل الملف أو الملاحظات، وسيتضح لك ما يحتاجه البحث أو المشروع قبل
+              التسليم.
+            </p>
+            <div class="actions">
+              <a
+                class="btn btn-primary"
+                href="https://wa.me/971501696228?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9%20%D8%A8%D8%AD%D8%AB%D9%8A%20%D8%A3%D9%88%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D8%A7%D9%84%D9%8A%D9%88%D9%85"
+                target="_blank"
+                rel="noopener"
+              >
+                تواصل الآن
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        © بورسايمنت — صفحة هبوط لعرض خدمة المراجعة الأكاديمية بصورة واضحة
+        ومهنية.
+      </footer>
+    </header>
+
+    <div class="sticky-cta">
+      <div class="sticky-cta-inner">
+        <div class="sticky-cta-text">
+          راجع بحثك أو مشروعك اليوم
+          <small>تواصل مباشر وسريع عبر واتساب</small>
+        </div>
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/971501696228?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9%20%D8%A8%D8%AD%D8%AB%D9%8A"
+          target="_blank"
+          rel="noopener"
+        >
+          اطلب المراجعة الآن
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
