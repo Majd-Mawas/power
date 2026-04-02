@@ -182,6 +182,20 @@
         font-weight: 700;
         font-size: 0.92rem;
       }
+      .nav-links a {
+        color: inherit;
+        text-decoration: none;
+        padding: 0.35rem 0.7rem;
+        border-radius: 10px;
+        display: inline-block;
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+      }
 
       .hero {
         margin-top: 1.4rem;
@@ -303,7 +317,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1.05rem;
+        gap: 1.25rem;
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 12%),
           linear-gradient(
@@ -311,6 +325,8 @@
             rgba(20, 70, 216, 0.88),
             rgba(8, 35, 120, 0.95)
           );
+        order: 1;
+        box-shadow: 0 24px 60px rgba(6, 18, 72, 0.22) inset;
       }
       .hero-content::before {
         content: "";
@@ -333,6 +349,9 @@
       .hero-content > * {
         position: relative;
         z-index: 1;
+      }
+      .hero-media {
+        order: 2;
       }
       .eyebrow {
         display: inline-flex;
@@ -399,6 +418,14 @@
         gap: 0.6rem;
         font-size: 0.98rem;
         color: #f2f7ff;
+        padding: 0.6rem 0.7rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(160, 200, 255, 0.18);
+      }
+      .checks li span:last-child {
+        font-weight: 800;
+        color: rgba(240, 248, 255, 0.96);
       }
       .check {
         width: 24px;
@@ -446,10 +473,39 @@
         transform: translateY(-2px);
         filter: brightness(1.04);
       }
+      .btn:active {
+        transform: translateY(0);
+        filter: brightness(0.98);
+      }
       .btn-primary {
         color: #fff;
         background: linear-gradient(90deg, #1fd29f, #33a5ff);
         box-shadow: 0 16px 36px rgba(21, 160, 237, 0.32);
+      }
+      .wa-btn {
+        background: linear-gradient(90deg, #25d366, #128c7e);
+        box-shadow: 0 16px 36px rgba(37, 211, 102, 0.32);
+      }
+      .wa-btn:hover {
+        filter: brightness(1.05);
+        box-shadow: 0 18px 40px rgba(37, 211, 102, 0.36);
+      }
+      .icon-22 {
+        width: 22px;
+        height: 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 22px;
+      }
+      .hero-content h1 {
+        max-width: 20ch;
+        line-height: 1.35;
+        letter-spacing: -0.01em;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+      }
+      .hero-content .actions {
+        margin-top: 0.4rem;
       }
       .btn-secondary {
         color: #eef6ff;
@@ -814,24 +870,11 @@
             src="https://powersiment.online/storage/landing-pages/tiktok/hero/01KM66VW811X5842MX94N2340X.jpg"
             alt=""
           />
-          <div class="hero-media-card">
-            <div class="hero-media-badge">مراجعة قبل التسليم</div>
-            <h3 class="hero-media-title">وضوح أكثر قبل اتخاذ الخطوة الأخيرة</h3>
-            <p class="hero-media-text">
-              اعرف ما الذي يحتاجه بحثك أو مشروعك من توثيق وتنسيق وملاحظات، قبل
-              أن يضيق الوقت.
-            </p>
-          </div>
         </div>
         <div class="hero-content">
           <span class="eyebrow">إرشاد أكاديمي متخصص</span>
 
-          <h2>قبل أن تسلم بحثك… تأكد أنه مطابق للمعايير الأكاديمية.</h2>
-
-          <p class="lead">
-            نساعد طلاب البكالوريوس والماجستير والدكتوراه على مراجعة أبحاثهم
-            أكاديميًا قبل التسليم
-          </p>
+          <h1>قبل أن تسلم بحثك… تأكد أنه مطابق للمعايير الأكاديمية.</h1>
 
           <ul class="checks">
             <li>
@@ -860,16 +903,7 @@
               data-contact-value="971501696228"
               data-text="السلام عليكم، أريد مراجعة بحثي أو مشروعي قبل التسليم."
             >
-              <span
-                style="
-                  width: 22px;
-                  height: 22px;
-                  display: inline-flex;
-                  align-items: center;
-                  justify-content: center;
-                "
-                aria-hidden="true"
-              >
+              <span class="icon-22" aria-hidden="true">
                 <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill="currentColor"
@@ -883,12 +917,7 @@
               </span>
               <span>احصل على تقييم بحثك الآن</span>
             </a>
-            <a class="btn btn-secondary" href="#steps">اعرف كيف تتم المراجعة</a>
           </div>
-
-          <p class="hero-note">
-            رسالة واضحة • خطوة عملية • تواصل مباشر عبر واتساب
-          </p>
         </div>
       </section>
 
